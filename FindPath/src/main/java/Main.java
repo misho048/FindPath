@@ -7,9 +7,11 @@ import java.io.FileNotFoundException;
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
 
-
+        //here we put filePath
         final  String filePath="file/grid.txt";
         Find find= new Find(filePath);
+
+        //performance test
         long startTime = System.currentTimeMillis();
         find.Run();
         long finishTime = System.currentTimeMillis();

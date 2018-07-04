@@ -5,7 +5,10 @@ import java.util.*;
  * Created by Mišinko on 4.7.2018.
  */
 class Find {
-
+        //positionMap saves the positions of start and finish points
+        //maze cointains whole maze
+        //path is the file path to the grid file
+        //road saving routes we taked (u u d r ....)
         private HashMap<String,Integer> positionMap = new HashMap<String, Integer>();
         private ArrayList<ArrayList<String>> maze = new ArrayList<ArrayList<String>>();
         private String path;
@@ -118,6 +121,9 @@ class Find {
     }
 
     private boolean searchPath (int row, int column) {
+        // method should recursivly iterate until there is full maze of 1 (visited) which means there is no path
+        // or we found end (x)
+        //
         // dr,dc stands for RowDifference nad ColumnDifference
         int dr,dc;
 
@@ -125,7 +131,7 @@ class Find {
         if (maze.get(row).get(column).equals("X"))
             return true;
 
-        //to avoid
+        //to avoid going in the circles
         if ((maze.get(row).get(column).equals(".")) || (maze.get(row).get(column).equals("S"))) {
             maze.get(row).set(column, "1");
 
